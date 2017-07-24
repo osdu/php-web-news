@@ -1,0 +1,14 @@
+# http://news.php.io
+# https://github.com/php/web-news
+#
+
+RewriteEngine On
+
+# Paging through group messages
+RewriteRule ^(php.+)/start/([0-9]+) /group.php?group=$1&i=$2 [L]
+
+# Individual post
+RewriteRule ^(php.+)/([0-9]+)       /article.php?group=$1&article=$2 [L]
+
+# Newsgroup main page
+RewriteRule ^(php[^/]+)(/)?$        /group.php?group=$1 [L]
